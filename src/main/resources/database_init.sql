@@ -172,8 +172,9 @@ COMMENT ON COLUMN geometry_global_view.tags IS 'Hstore column storing key-value 
 DO $$
 BEGIN
     EXECUTE format(
-        'COMMENT ON DATABASE %I IS $$PostgreSQL representation of OpenStreetMap data from OSM dump$$',
-        current_database()
+        'COMMENT ON DATABASE %I IS %L',
+        current_database(),
+        'PostgreSQL representation of OpenStreetMap data from OSM dump'
     );
 END;
 $$;
